@@ -1,0 +1,6 @@
+*{
+    box-sizing: border-box;
+}
+.first_letter::first-letter{
+    font-size: 4rem;
+}

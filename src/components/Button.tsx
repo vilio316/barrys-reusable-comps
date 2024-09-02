@@ -30,9 +30,7 @@ export default function Button(props : {
             marginTop: `${props.style_obj.mTop}rem`,
             marginBottom: `${props.style_obj.mB}rem`,
             fontSize: `${props.style_obj.fS}rem`,
-            width: `${props.style_obj.width}rem`
-
-
+            width: `${props.style_obj.width}rem`,
         }}>{props.text}</button>
         </>
     )
