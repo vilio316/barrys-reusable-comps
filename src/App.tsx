@@ -36,11 +36,14 @@ function App() {
       border:"2px solid blue"
       }}/>
       <TextInput readOnly={false} bRadius={0.5} bColor='red' bWidth={0.25} pad={0.25}/>
-      <PasswordInput/>
-      <Paragraph text='Scorn' indent={2}/>
-      <Image alt='A shot of my pretty face' src={barryFace} bRadius={5}/>
+      <PasswordInput readOnly={false} fSize={1.5} bRadius={1} indent={1.5}/>
+      <Paragraph text='Scorn' className='first_letter'/>
+      <div style={{
+        width:"75vw"
+      }}>
+      <Image alt='A shot of my pretty face' src={barryFace} bRadius={1.5}/>
+      </div>
     </>
   )
 }
-
 export default App

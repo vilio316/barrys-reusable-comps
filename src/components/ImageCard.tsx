@@ -5,7 +5,7 @@ type ImgStyle ={
     alt: string,
     src: string,
 }
-
+//pickup from here tomorrow
 export function Image(props: ImgStyle){
     let img_width = (props.width) ? props.width * 100: 75
 
