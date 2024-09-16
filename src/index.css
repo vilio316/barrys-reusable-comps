@@ -4,3 +4,17 @@
 .first_letter::first-letter{
     font-size: 4rem;
 }
+.first_letter{
+    font-size: 2.5rem;
+    font-family: monospace;
+}
+label{
+    display: block;
+    margin: 0.5rem 0;
+}
+.input:focus{
+    border: 4px solid black;
+}
+.justify{
+    text-align: justify;
+}

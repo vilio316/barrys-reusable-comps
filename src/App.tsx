@@ -2,8 +2,10 @@ import { styleObject } from './components/Button'
 import Button from './components/Button'
 import { Paragraph } from './components/Paragraphs'
 import barryFace from './assets/WIN_20240825_15_33_28_Pro.jpg'
-import { Image } from './components/ImageCard'
+import { Image, ImageCardOut} from './components/ImageCard'
 import { PasswordInput, TextInput } from './components/Inputs'
+import { FaHeart } from 'react-icons/fa6'
+import SideCard from './components/Cards'
 
 function App() {
   let button_style : styleObject = {
@@ -35,14 +37,18 @@ function App() {
       <input type='text' style={{
       border:"2px solid blue"
       }}/>
-      <TextInput readOnly={false} bRadius={0.5} bColor='red' bWidth={0.25} pad={0.25}/>
-      <PasswordInput readOnly={false} fSize={1.5} bRadius={1} indent={1.5}/>
-      <Paragraph text='Scorn' className='first_letter'/>
+      <TextInput className="input" readOnly={false} bRadius={0.5} bColor='red' bWidth={0.25} pad={0.25}/>
+      <PasswordInput className="input" readOnly={true} fSize={1.5} bRadius={1} indent={1.5}/>
+      <Paragraph text='White Dove' indent={0.5} style='italic' className='first_letter'/>
       <div style={{
         width:"75vw"
       }}>
       <Image alt='A shot of my pretty face' src={barryFace} bRadius={1.5}/>
       </div>
+      <ImageCardOut alt='A shot of my pretty face' src={barryFace} cardWidth={0.9} fWeight='bold' pad={0.75} icon={<FaHeart size={`2.5em`} fill='red'/>} imgRadius={1.25} />
+
+
+      <SideCard text='Lorem ipsum dolor amet skewuyeruuuuuuuuuuuuu wefytdweud wqgfdyqwidoqwiudpwqoud dwueygd whduywdyeter wieywegduwefgw' imgWidth={20} imgSrc={barryFace}/>
     </>
   )
 }
