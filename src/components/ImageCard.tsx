@@ -22,7 +22,7 @@ type ImageCard = {
 }
 
 export function Image(props: ImgStyle){
-    let img_width = (props.width) ? props.width * 100: 75
+    let img_width = props.width
 
     let default_style={
         width : `${img_width}%`,

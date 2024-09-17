@@ -38,8 +38,8 @@ function App() {
       border:"2px solid blue"
       }}/>
       <TextInput className="input" readOnly={false} bRadius={0.5} bColor='red' bWidth={0.25} pad={0.25}/>
-      <PasswordInput className="input" readOnly={true} fSize={1.5} bRadius={1} indent={1.5}/>
-      <Paragraph text='White Dove' indent={0.5} style='italic' className='first_letter'/>
+      <PasswordInput className="input" readOnly={true} fS={1.5} bRadius={1} indent={1.5}/>
+      <Paragraph text='White Dove' indent={0.5} className='first_letter'/>
       <div style={{
         width:"75vw"
       }}>
@@ -48,7 +48,11 @@ function App() {
       <ImageCardOut alt='A shot of my pretty face' src={barryFace} cardWidth={0.9} fWeight='bold' pad={0.75} icon={<FaHeart size={`2.5em`} fill='red'/>} imgRadius={1.25} />
 
 
-      <SideCard text='Lorem ipsum dolor amet skewuyeruuuuuuuuuuuuu wefytdweud wqgfdyqwidoqwiudpwqoud dwueygd whduywdyeter wieywegduwefgw' imgWidth={20} imgSrc={barryFace}/>
+      <SideCard imgWidth={50} imgSrc={barryFace} bgColor='purple' bRadiusImg={2.5} bRadius={1.5}>
+        <Paragraph text='Scarface' color='blue' className='first_letter'/>
+        <Paragraph text='Skyfall'/>
+        <TextInput readOnly label='Email'/>
+        </SideCard>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { FaEye, FaEyeSlash } from "react-icons/fa6"
 
-type Input_Text = {
+interface Input_Text extends React.ComponentPropsWithoutRef<'input'>{
     bRadius?: number,
     bWidth?: number,
     bColor?: string,
@@ -9,55 +9,56 @@ type Input_Text = {
     placeholder?: string,
     readOnly: boolean,
     pad?: number,
-    fSize?: number,
+    fS?: number,
     indent?: number,
-    className?: string
+    className?: string,
+    label?: string,
 }
 
-export function TextInput(props : Input_Text){
+export function TextInput({bRadius, bColor, pad, bWidth, placeholder, readOnly, fS, indent, className, label, id, name}: Input_Text){
     let default_style = {
         outline: 'none',
         borderStyle: 'solid',
     }
     let updated_style_object = {
-        ...default_style, borderRadius:`${props.bRadius}rem`, borderColor: `${props.bColor}`, borderWidth: `${props.bWidth}rem`, padding: `${props.pad}rem`
+        ...default_style, borderRadius:`${bRadius}rem`, borderColor: `${bColor}`, borderWidth: `${bWidth}rem`, padding: `${pad}rem`, fontSize:`${fS}rem`, textIndent: `${indent}rem`,
     }
 
     return(
         <>
-        <label htmlFor="input">Input</label>
-        <input type="text" id='input' className={props.className} readOnly={props.readOnly} placeholder={props.placeholder} style={updated_style_object}/>
+        <label htmlFor="input">{label}</label>
+        <input type="text" id={id} name={name} className={className} readOnly={readOnly} placeholder={placeholder} style={updated_style_object}/>
         </>
     )
 
 }
 
-export function PasswordInput(props : Input_Text){
+export function PasswordInput( {bRadius, bColor, pad, bWidth, placeholder, readOnly, fS, indent, className, label, id, name}: Input_Text){
     let [visible_state, changeVisibleState]= useState(false)
     let default_style = {
         outline: 'none',
         borderStyle: 'solid',
     }
     let updated_style_object = {
-        ...default_style, borderRadius:`${props.bRadius}rem`, borderColor: `${props.bColor}`, borderWidth: `${props.bWidth}rem`, padding: `${props.pad}rem`, fontSize:`${props?.fSize}rem`, textIndent: `${props.indent}rem`,
+        ...default_style, borderRadius:`${bRadius}rem`, borderColor: `${bColor}`, borderWidth: `${bWidth}rem`, padding: `${pad}rem`, fontSize:`${fS}rem`, textIndent: `${indent}rem`,
     }
     return(
         <>
         <div>
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">{label}</label>
         <div style={{
             display: "grid",
             alignItems:"center",
             alignContent:"center",
             gridTemplateColumns:"70% 5%"
         }}>
-        <input type={visible_state? 'text' : 'password'} id="password" placeholder="Password" style={updated_style_object} className={props.className}  readOnly={props.readOnly}/>
+        <input type={visible_state? 'text' : 'password'} id={id} name={name} placeholder={placeholder} style={updated_style_object} className={className}  readOnly={readOnly}/>
         <button onClick={()=> changeVisibleState(!visible_state)} style={{
             outline: 'none',
             border: '0',
             backgroundColor: 'inherit'
         }}>
-            {visible_state ? <FaEye fill="blue" fillOpacity={0.65} size={`${props.fSize}rem`} title="Hide Password"/> : <FaEyeSlash fill="blue" fillOpacity={0.65} size={`${props.fSize}em`} title="Show Password"/>}
+            {visible_state ? <FaEye fill="blue" fillOpacity={0.65} size={`${fS}rem`} title="Hide Password"/> : <FaEyeSlash fill="blue" fillOpacity={0.65} size={`${fS}em`} title="Show Password"/>}
         </button>
         </div>
         </div>

@@ -1,13 +1,14 @@
-type Paragraph = {
+interface Paragraph{
     weight?: string,
     fS?: number,
-    style?: 'italic' | 'oblique' ,
     text: string,
-    indent?: number, 
+    indent?: number,
+    style?: 'italic' | 'oblique', 
     className?: string
+    color?: string,
 }
 
-export function Paragraph({indent, style, fS, text, weight ,className}: Paragraph){
+export function Paragraph({indent, style, fS, text, weight ,className, color}: Paragraph){
     
     return(
         <>
@@ -15,7 +16,8 @@ export function Paragraph({indent, style, fS, text, weight ,className}: Paragrap
             fontSize: `${fS}rem`,
             fontStyle: `${style}`,
             textIndent: `${indent}rem`,
-            fontWeight: weight
+            fontWeight: weight,
+            color: color,
         }} className={className}>{text}</p>
         </>
     )
