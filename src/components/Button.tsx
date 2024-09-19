@@ -1,37 +1,30 @@
-export type styleObject = {
-    bR?: string, 
+export type ButtonProps = {
+    bR?: number, 
     color?: string, 
     bgColor?: string, 
-    pad?: string,
-    mLeft?: string,
-    mRight?: string,
-    mB?: string,
-    mTop?: string,
+    pad?: number,
+    mLeftRight?: number,
+    mTopBott?: number,
     fS?: number,  
-    width?: string
+    width?: string,
+    text: string,
 }
 
-export default function Button(props : {
-    style_obj : styleObject,
-    text: string
-}){
+export default function Button({bR, bgColor,color, pad, mLeftRight, mTopBott, fS, width, text} : ButtonProps,){
 
     return(
         <>
         <button style={{
             border: "none",
             outline: "none",
-            borderRadius: `${props.style_obj.bR}rem`,
-            color: `${props.style_obj.color}`,
-            backgroundColor: `${props.style_obj.bgColor}`,
-            padding: `${props.style_obj.pad}rem`,
-            marginLeft: `${props.style_obj.mLeft}rem`,
-            marginRight: `${props.style_obj.mRight}rem`,
-            marginTop: `${props.style_obj.mTop}rem`,
-            marginBottom: `${props.style_obj.mB}rem`,
-            fontSize: `${props.style_obj.fS}rem`,
-            width: `${props.style_obj.width}rem`,
-        }}>{props.text}</button>
+            borderRadius: `${bR}rem`,
+            color: color,
+            backgroundColor: bgColor,
+            padding: `${pad}rem`,
+            margin: `${mTopBott}rem ${mLeftRight}rem`,
+            fontSize: `${fS}rem`,
+            width: `${width}rem`,
+        }}>{text}</button>
         </>
     )
 }

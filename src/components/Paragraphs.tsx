@@ -1,11 +1,9 @@
-interface Paragraph{
+interface Paragraph extends React.ComponentPropsWithoutRef<'p'>{
     weight?: string,
     fS?: number,
     text: string,
     indent?: number,
-    style?: 'italic' | 'oblique', 
-    className?: string
-    color?: string,
+    //style?: 'italic' | 'oblique', 
 }
 
 export function Paragraph({indent, style, fS, text, weight ,className, color}: Paragraph){

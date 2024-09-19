@@ -11,17 +11,18 @@ interface Input_Text extends React.ComponentPropsWithoutRef<'input'>{
     pad?: number,
     fS?: number,
     indent?: number,
-    className?: string,
     label?: string,
+    mTopBott?: number,
+    mLeftRight?: number,
 }
 
-export function TextInput({bRadius, bColor, pad, bWidth, placeholder, readOnly, fS, indent, className, label, id, name}: Input_Text){
+export function TextInput({bRadius, bColor, pad, bWidth, placeholder, readOnly, fS, indent, className, label, id, name, mTopBott, mLeftRight}: Input_Text){
     let default_style = {
         outline: 'none',
         borderStyle: 'solid',
     }
     let updated_style_object = {
-        ...default_style, borderRadius:`${bRadius}rem`, borderColor: `${bColor}`, borderWidth: `${bWidth}rem`, padding: `${pad}rem`, fontSize:`${fS}rem`, textIndent: `${indent}rem`,
+        ...default_style, borderRadius:`${bRadius}rem`, borderColor: `${bColor}`, borderWidth: `${bWidth}rem`, padding: `${pad}rem`, fontSize:`${fS}rem`, textIndent: `${indent}rem`, margin: `${mTopBott}rem ${mLeftRight}rem`
     }
 
     return(
@@ -33,14 +34,14 @@ export function TextInput({bRadius, bColor, pad, bWidth, placeholder, readOnly, 
 
 }
 
-export function PasswordInput( {bRadius, bColor, pad, bWidth, placeholder, readOnly, fS, indent, className, label, id, name}: Input_Text){
+export function PasswordInput( {bRadius, bColor, pad, bWidth, placeholder, readOnly, fS, indent, className, label, id, name, mLeftRight, mTopBott}: Input_Text){
     let [visible_state, changeVisibleState]= useState(false)
     let default_style = {
         outline: 'none',
         borderStyle: 'solid',
     }
     let updated_style_object = {
-        ...default_style, borderRadius:`${bRadius}rem`, borderColor: `${bColor}`, borderWidth: `${bWidth}rem`, padding: `${pad}rem`, fontSize:`${fS}rem`, textIndent: `${indent}rem`,
+        ...default_style, borderRadius:`${bRadius}rem`, borderColor: `${bColor}`, borderWidth: `${bWidth}rem`, padding: `${pad}rem`, fontSize:`${fS}rem`, textIndent: `${indent}rem`, margin: `${mTopBott}rem ${mLeftRight}rem`
     }
     return(
         <>
