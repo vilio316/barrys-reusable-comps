@@ -2,7 +2,7 @@ import { Paragraph } from "./Paragraphs"
 
 interface ImgStyle extends React.ComponentPropsWithoutRef<'img'>{
     bRadius?: number,
-    width?: number,
+    width: number,
     height?: number,
     pad?: number, 
 }
@@ -11,7 +11,7 @@ type ImageCard = {
     bRadius?: number,
     pad?: number,
     cardHeight?: number,
-    cardWidth?: number,
+    cardWidth: number,
     fWeight?: 'bold'|'100'|'200'|'300'|'400',
     src: string,
     alt: string,
@@ -31,11 +31,12 @@ export function Image({width, className, bRadius, height, pad, alt, src,  } : Im
     let new_style_obj = {...default_style, 
                         padding: `${pad}rem`,
                         borderRadius : `${bRadius}rem`,
+                        height:`${height}%`
     }
 
     return(
         <>
-            <img style={new_style_obj} alt={alt} src={src} />
+            <img style={new_style_obj} alt={alt} src={src} className={className} />
         </>
     )
 }

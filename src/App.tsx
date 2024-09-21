@@ -11,6 +11,7 @@ import screen2 from './assets/Screenshot (53).png'
 import screen3 from './assets/Screenshot (54).png'
 import screen4 from './assets/Screenshot (55).png'
 import screen5 from './assets/Screenshot (56).png'
+import { Navbar_ThreeCols, Navbar_TwoCols } from './components/NavBar'
 
 function App() {
 
@@ -18,25 +19,37 @@ function App() {
 
   return(
     <>
+    <Navbar_TwoCols logoWidth={50} className='grid'>
+      <a className='links'>Home</a>
+      <a className='links'>About</a>
+      <a className='links'>Recipes</a>
+      <a className='links'>Blogs</a>
+      </Navbar_TwoCols>
+
+    <Navbar_ThreeCols logoWidth={60} className='grid' action_text='Log In / Sign Up'>
+    <a>Home</a>
+      <a>About</a>
+      <a>Recipes</a>
+    </Navbar_ThreeCols>
     <Carousel array={imgs}/>
-     
       <Button
           color='blue'
           fS={2}
           mLeftRight={1}
           mTopBott={2}
-          bR={1.5}
-          pad= {0.75} text="Log In"/>
+          bRadius={1.5}
+          bgColor='yellow'
+          pad= {0.75} text="Log In" onClick={()=> console.log("Triste!")}/>
       <input type='text' style={{
-      border:"2px solid blue"
+      border:"0.125rem solid blue"
       }}/>
-      <TextInput className="input" readOnly={false} bRadius={0.5} bColor='red' bWidth={0.25} pad={0.25} mTopBott={1.5} mLeftRight={1.75}/>
-      <PasswordInput className="input" readOnly={true} fS={1.5} bRadius={1} indent={1.5} mTopBott={1.25}/>
+      <TextInput className="input" readOnly={false} bRadius={0.5} bColor='red' bWidth={0.25} pad={0.25} mTopBott={1} mLeftRight={1.5}/>
+      <PasswordInput className="input" readOnly={true} fS={1.5} bRadius={1} indent={1.5} mTopBott={1.25} width={10}/>
       <Paragraph text='White Dove' indent={0.5} className='first_letter'/>
       <div style={{
-        width:"75vw"
+        width:"75%"
       }}>
-      <Image alt='A shot of my pretty face' src={barryFace} bRadius={1.5}/>
+      <Image alt='A shot of my pretty face' src={barryFace} bRadius={1.5} width={80}/>
       </div>
       <ImageCardOut alt='A shot of my pretty face' src={barryFace} cardWidth={0.9} fWeight='bold' pad={0.75} icon={<FaHeart size={`2.5em`} fill='red'/>} imgRadius={1.25} />
 

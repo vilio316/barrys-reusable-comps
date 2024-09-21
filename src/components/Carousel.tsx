@@ -26,16 +26,18 @@ const handle_move_back = (val : number) => {
     return(
         <>
             <div className='carousel_container' style={{
-                display: 'grid', placeItems:"center", width:"500px"
+                position:"relative", display: 'grid', placeItems:"center", width:"50%"
             }}>
-            <Image src={sources_array[showing]} alt="Blasphemous Screenshots" width={90} bRadius={1.5}/>
-            </div>
-            <p>{showing + 1} / {sources_array.length}</p>
-            <button onClick={()=> handle_move_back(1)
-             }>Prev. Slide!</button>
-            <button onClick={()=> handle_move(1)
-             }>Next Slide!</button>
-         
+            <Image src={sources_array[showing]} alt="Blasphemous Screenshots" width={100} bRadius={1.5} className='carousel_img'/>
+            <span style={{
+                fontWeight: "bold",
+                fontSize: '2.5rem',
+            }}>{showing + 1} / {sources_array.length}</span>
+            <button className="slide_button prev" onClick={()=> handle_move_back(1)
+             }> {'<'} </button>
+            <button className="slide_button next" onClick={()=> handle_move(1)
+             }>{'>'}</button>
+         </div>
             
         </>
     )

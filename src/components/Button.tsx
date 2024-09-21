@@ -1,5 +1,5 @@
-export type ButtonProps = {
-    bR?: number, 
+interface ButtonProps extends React.ComponentPropsWithoutRef<'button'>{
+    bRadius?: number, 
     color?: string, 
     bgColor?: string, 
     pad?: number,
@@ -10,14 +10,14 @@ export type ButtonProps = {
     text: string,
 }
 
-export default function Button({bR, bgColor,color, pad, mLeftRight, mTopBott, fS, width, text} : ButtonProps,){
+export default function Button({bRadius, bgColor,color, pad, mLeftRight, mTopBott, fS, width, text, onClick} : ButtonProps,){
 
     return(
         <>
-        <button style={{
+        <button onClick={onClick} style={{
             border: "none",
             outline: "none",
-            borderRadius: `${bR}rem`,
+            borderRadius: `${bRadius}rem`,
             color: color,
             backgroundColor: bgColor,
             padding: `${pad}rem`,
