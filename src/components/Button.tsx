@@ -10,11 +10,11 @@ interface ButtonProps extends React.ComponentPropsWithoutRef<'button'>{
     text: string,
 }
 
-export default function Button({bRadius, bgColor,color, pad, mLeftRight, mTopBott, fS, width, text, onClick} : ButtonProps,){
+export default function Button({bRadius, bgColor,color, pad, mLeftRight, mTopBott, fS, width, text, onClick, className} : ButtonProps,){
 
     return(
         <>
-        <button onClick={onClick} style={{
+        <button className={className} onClick={onClick} style={{
             border: "none",
             outline: "none",
             borderRadius: `${bRadius}rem`,
